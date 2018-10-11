@@ -1,0 +1,116 @@
+.bg-image {
+    min-height: 50rem;
+    position: relative;
+    display: table;
+    width: 100%;
+    height: auto;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.1) 100%
+      ),
+      url(../images/vr-glasses.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .buttons {
+    margin-top: 8rem;
+  }
+  
+  .buttons a {
+    text-decoration: none;
+  }
+  
+  .btn-primary {
+    border: none;
+    border-radius: 20px;
+  }
+  
+  .btn-blauw:hover {
+    background-color: #1363a1;
+  }
+  
+  .btn-groen:hover {
+    background-color: #2b661f;
+  }
+  
+  .btn-oranje:hover {
+    background-color: #9e5503;
+  }
+  
+  .btn-geel:hover {
+    background-color: #9f7c18;
+  }
+  
+  .btn-primary:active {
+    border: none;
+  }
+  
+  .btn-blauw {
+    background-color: #5193c7;
+  }
+  
+  .btn-groen {
+    background-color: #629856;
+  }
+  
+  .btn-oranje {
+    background-color: #e99434;
+  }
+  
+  .btn-geel {
+    background-color: #e2be59;
+  }
+  
+  .margin-top {
+    margin-top: 20px !important;
+  }
+  
+  .margin-top-feedback {
+    margin-top: 5rem;
+  }
+  
+  .feedback-image {
+    max-width: 100%;
+    border-radius: 15px;
+  }
+  
+  .center {
+    text-align: center;
+  }
+  
+  .title {
+    padding-top: 4rem;
+    font-family: Cabin, sans-serif;
+    color: #654366;
+  }
+  
+  .feedback-text {
+    font-size: 20px;
+    font-family: Cabin, sans-serif;
+    background-color: #e6cdd6;
+    padding: 15px;
+    border-radius: 15px;
+  }
+  
+  .language-switch {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
+  
+  .dropdown-toggle{}
+  
+  /*
+  buzz-blauw: #5193C7
+  buzz-oranje: #E99434
+  buzz-groen: #629856
+  buzz-geel: #E2D459
+  more-oranje: #E73E16
+  more-blauw: #0091A6
+  */
+  
