@@ -70,6 +70,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
     var run = true;
+    var interval = 500;
 
     function readcontrollers() {
         if (!run) {
@@ -85,16 +86,16 @@
         if (obj[0].red == 1) {
             navigatie("index.html");
         } else if (obj[0].blue == 1) {
-            run = false;
+            interval = 10000;
             $("#audio-player").trigger('play');
         } else if (obj[0].orange == 1) {
-            run = false;
+            interval = 10000;
             $("#audio-player").trigger('play');
         } else if (obj[0].green == 1) {
-            run = false;
+            interval = 10000;
             $("#audio-player").trigger('play');
         } else if (obj[0].yellow == 1) {
-            run = false;
+            interval = 10000;
             $("#audio-player").trigger('play');
         }
 
@@ -117,7 +118,7 @@
         setTimeout(function () {
             setInterval(function () {
                 readcontrollers();
-            }, 500);
+            }, interval);
         })
 
     }, 2000);
