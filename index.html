@@ -62,6 +62,36 @@
                     break;
             }
         }
+
+        function readcontrollers(){
+            var input = getRemote("/cgi-bin/test.py");
+            input = input.replace(/'/g, '"');
+            input = input.replace(/True/g, 1);
+            input = input.replace(/False/g, 2);
+            console.log(input.trim());
+            var obj = JSON.parse(input.trim());
+
+            if (obj[0].orange == 1){
+                navigatie("feedback.html");
+            }
+
+        }
+
+        function getRemote(remote_url) {
+            return $.ajax({
+                type: "GET",
+                url: remote_url,
+                async: false
+            }).responseText;
+        }
+
+        function navigatie(url) {
+            window.location.href = url;
+        }
+
+        setInterval(function(){ readcontrollers(); }, 100);
+
+
     </script>
 </body>
 
