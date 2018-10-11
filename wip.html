@@ -10,6 +10,46 @@
     
 </head>
 <body class="wip-bg">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    var run = true;
+    function readcontrollers(){
+        if (!run){
+            return;
+        }
+        var input = getRemote("/cgi-bin/test.py");
+        input = input.replace(/'/g, '"');
+        input = input.replace(/True/g, 1);
+        input = input.replace(/False/g, 2);
+        console.log(input.trim());
+        var obj = JSON.parse(input.trim());
+
+        if (obj[0].red == 1){
+            navigatie("explore.html");
+        }
+
+    }
+
+    function getRemote(remote_url) {
+        return $.ajax({
+            type: "GET",
+            url: remote_url,
+            async: false
+        }).responseText;
+    }
+
+    function navigatie(url) {
+        run = false;
+        window.location.href = url;
+    }
+    $(document).ready(function() {
+        setTimeout(function () {
+            setInterval(function(){ readcontrollers(); }, 500);
+        })
+
+    }, 2000);
+
+</script>
 </body>
 <a href="explore.html">
         <div class="terug">
