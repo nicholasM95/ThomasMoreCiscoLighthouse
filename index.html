@@ -99,7 +99,12 @@
             window.location.href = url;
         }
 
-       
+        $(document).ready(function() {
+            setTimeout(function () {
+                setInterval(function(){ readcontrollers(); }, 100);
+            })
+
+        }, 2000);
 
 
 
