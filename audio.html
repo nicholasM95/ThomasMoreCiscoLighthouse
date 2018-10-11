@@ -102,6 +102,12 @@
 
     }
 
+    $('#audio-player').on('ended', function() {
+        intervalObj = setInterval(function () {
+            readcontrollers();
+        }, interval);
+    });
+
     function getRemote(remote_url) {
         return $.ajax({
             type: "GET",
