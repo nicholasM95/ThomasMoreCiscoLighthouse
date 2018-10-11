@@ -19,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="378">
-              <caret line="109" column="63" lean-forward="true" selection-start-line="109" selection-start-column="63" selection-end-line="109" selection-end-column="63" />
+              <caret line="109" column="64" lean-forward="true" selection-start-line="109" selection-start-column="64" selection-end-line="109" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -33,7 +33,7 @@
         <entry file="file://$PROJECT_DIR$/wip.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="256">
-              <caret line="46" column="60" lean-forward="false" selection-start-line="46" selection-start-column="60" selection-end-line="46" selection-end-column="60" />
+              <caret line="46" column="61" lean-forward="false" selection-start-line="46" selection-start-column="61" selection-end-line="46" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -43,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/audio.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="162">
-              <caret line="72" column="20" lean-forward="false" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="20" />
+              <caret line="72" column="21" lean-forward="false" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -52,17 +52,17 @@
       <file leaf-file-name="explore.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/explore.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="97" column="63" lean-forward="false" selection-start-line="97" selection-start-column="63" selection-end-line="97" selection-end-column="63" />
+            <state relative-caret-position="328">
+              <caret line="97" column="64" lean-forward="false" selection-start-line="97" selection-start-column="64" selection-end-line="97" selection-end-column="64" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="feedback.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="feedback.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/feedback.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
+            <state relative-caret-position="260">
               <caret line="98" column="19" lean-forward="false" selection-start-line="98" selection-start-column="19" selection-end-line="98" selection-end-column="19" />
               <folding />
             </state>
@@ -79,10 +79,10 @@
       <list>
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/feedback.html" />
+        <option value="$PROJECT_DIR$/explore.html" />
+        <option value="$PROJECT_DIR$/audio.html" />
         <option value="$PROJECT_DIR$/wip.html" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/audio.html" />
-        <option value="$PROJECT_DIR$/explore.html" />
       </list>
     </option>
   </component>
@@ -179,7 +179,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11047000" />
+    <option name="totallyTimeSpent" value="11138000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="59" y="25" width="1307" height="743" extended-state="6" />
@@ -329,18 +329,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/feedback.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="109" column="63" lean-forward="true" selection-start-line="109" selection-start-column="63" selection-end-line="109" selection-end-column="63" />
+        <state relative-caret-position="260">
+          <caret line="98" column="19" lean-forward="false" selection-start-line="98" selection-start-column="19" selection-end-line="98" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wip.html">
+    <entry file="file://$PROJECT_DIR$/explore.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="46" column="60" lean-forward="false" selection-start-line="46" selection-start-column="60" selection-end-line="46" selection-end-column="60" />
+        <state relative-caret-position="328">
+          <caret line="97" column="64" lean-forward="false" selection-start-line="97" selection-start-column="64" selection-end-line="97" selection-end-column="64" />
           <folding />
         </state>
       </provider>
@@ -348,23 +348,23 @@
     <entry file="file://$PROJECT_DIR$/audio.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
-          <caret line="72" column="20" lean-forward="false" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="20" />
+          <caret line="72" column="21" lean-forward="false" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/explore.html">
+    <entry file="file://$PROJECT_DIR$/wip.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="97" column="63" lean-forward="false" selection-start-line="97" selection-start-column="63" selection-end-line="97" selection-end-column="63" />
+        <state relative-caret-position="256">
+          <caret line="46" column="61" lean-forward="false" selection-start-line="46" selection-start-column="61" selection-end-line="46" selection-end-column="61" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/feedback.html">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="98" column="19" lean-forward="false" selection-start-line="98" selection-start-column="19" selection-end-line="98" selection-end-column="19" />
+        <state relative-caret-position="378">
+          <caret line="109" column="64" lean-forward="true" selection-start-line="109" selection-start-column="64" selection-end-line="109" selection-end-column="64" />
           <folding />
         </state>
       </provider>
