@@ -35,15 +35,56 @@
     <div class="row">
         <div class="col-6 offset-1">
             <div class="row buttons-feedback">
-                <div class="col-5">
-                    <button type="button" class="btn btn-primary btn-blauw btn-lg btn-block">Stop recording</button>
+                <div class="col-4">
+                    <button type="button" class="btn btn-primary btn-blauw btn-lg btn-block">Start recording</button>
                 </div>
-                <div class="col-5">
-                    <button type="button" class="btn btn-primary btn-oranje btn-lg btn-block">Start recording</button>
+                <div class="col-4">
+                    <button type="button" class="btn btn-primary btn-oranje btn-lg btn-block">Stop recording</button>
+                </div>
+                <div class="col-4">
+                    <button type="button" class="btn btn-primary btn-groen btn-lg btn-block">Send recording</button>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        function readcontrollers(){
+            var input = getRemote("/cgi-bin/test.py");
+            input = input.replace(/'/g, '"');
+            input = input.replace(/True/g, 1);
+            input = input.replace(/False/g, 2);
+            console.log(input.trim());
+            var obj = JSON.parse(input.trim());
+
+            if (obj[0].red == 1){
+                navigatie("index.html");
+            } else if (obj[0].blue == 1){
+                //start recordng
+            }else if (obj[0].orange == 1){
+                //stop recording
+            }else if (obj[0].yellow == 1){
+                //send
+            }
+
+        }
+
+        function getRemote(remote_url) {
+            return $.ajax({
+                type: "GET",
+                url: remote_url,
+                async: false
+            }).responseText;
+        }
+
+        function navigatie(url) {
+            window.location.href = url;
+        }
+
+        $(document).ready(function() {
+            setInterval(function(){ readcontrollers(); }, 100);
+        });
+    </script>
 
 </body>
 

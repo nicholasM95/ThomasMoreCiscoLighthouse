@@ -51,6 +51,45 @@
                 </div>
         </div>
     </div>
+    <script>
+        function readcontrollers(){
+            var input = getRemote("/cgi-bin/test.py");
+            input = input.replace(/'/g, '"');
+            input = input.replace(/True/g, 1);
+            input = input.replace(/False/g, 2);
+            console.log(input.trim());
+            var obj = JSON.parse(input.trim());
+
+            if (obj[0].red == 1){
+                navigatie("index.html");
+            } else if (obj[0].blue == 1){
+                //play
+            }else if (obj[0].orange == 1){
+                //play
+            }else if (obj[0].green == 1){
+                //play
+            }else if (obj[0].yellow == 1){
+                //play
+            }
+
+        }
+
+        function getRemote(remote_url) {
+            return $.ajax({
+                type: "GET",
+                url: remote_url,
+                async: false
+            }).responseText;
+        }
+
+        function navigatie(url) {
+            window.location.href = url;
+        }
+
+        $(document).ready(function() {
+            setInterval(function(){ readcontrollers(); }, 100);
+        });
+    </script>
 </body>
 
 </html>
