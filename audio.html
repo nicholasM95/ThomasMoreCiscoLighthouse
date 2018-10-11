@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -13,6 +15,16 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:400,500,600,700">
 
     <title>Audio</title>
+
+    <script>
+    $('document').ready(function () {
+    $('.btn-vote').click(function () {
+        $("#audio-player").trigger('play');
+    });
+});   
+</script>
+
+
 </head>
 
 <body>
@@ -21,6 +33,10 @@
             Back
         </div>
     </a>
+
+    <audio class="hidden" id="audio-player" src="images/audio.mp3" type="audio/mp3">
+            </audio>
+
     <div class="row justify-content-center">
         <div class="col-9">
             <h3 class="center title-padding">Let's hear what the parties have to say</h3>
@@ -29,16 +45,19 @@
                     <a>
                         <button type="button" class="btn btn-vote btn-primary btn-geel btn-lg btn-block">
                             <img src="images/cdhvoorzitteroriginal.jpg" width="150px">
+                            <p>CDH</p>
                         </button>
                     </a>
                 </div>
                 <div class="col-6">
                     <a><button type="button" class="btn btn-vote btn-primary btn-oranje btn-lg btn-block">
-                            <img src="images/psvoorzitteroriginal.jpg"></button></a>
+                            <img src="images/psvoorzitteroriginal.jpg">
+                        <p>Elio di Rupo - PS</p></button></a>
                 </div>
                 <div class="col-6">
                     <a><button type="button" class="btn btn-vote btn-primary btn-groen btn-lg btn-block">
                             <img src="images/ecolovoorzitteroriginal.jpg" height="75px">
+                            <p>Ecolo</p>
                         </button>
                     </a>
                 </div>
@@ -46,6 +65,7 @@
                     <a>
                         <button type="button" class="btn btn-vote btn-primary btn-blauw btn-lg btn-block">
                             <img src="images/mrvoorzitteroriginal.jpg">
+                            <p>MR</p>
                         </button>
                     </a>
                 </div>
