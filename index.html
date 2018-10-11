@@ -33,16 +33,35 @@
             <div class="col-6"></div>
             <div class="col-3 offset-1">
                 <a href="explore.html"><button type="button" class="btn btn-primary btn-blauw btn-lg btn-block">Explore</button></a>
-                <button type="button" class="btn btn-primary btn-oranje btn-lg btn-block margin-top">Listen to audio</button>
+                <a href="audio.html"><button type="button" class="btn btn-primary btn-oranje btn-lg btn-block margin-top">Listen
+                        to audio</button></a>
                 <a href="feedback.html"><button type="button" class="btn btn-primary btn-groen btn-lg btn-block margin-top">Give
                         feedback</button></a>
-                <button type="button" class="btn btn-primary btn-geel btn-lg btn-block margin-top">Surprise me!</button>
+                <button onclick="kiesRandom()" type="button" class="btn btn-primary btn-geel btn-lg btn-block margin-top">Surprise
+                    me!</button>
             </div>
         </div>
     </div>
 
     <script>
         $('.dropdown-toggle').dropdown()
+    </script>
+
+    <script>
+        function kiesRandom() {
+            let randomNumber = Math.floor(Math.random() * 3);
+            switch (randomNumber) {
+                case 0:
+                    window.location.href = "explore.html";
+                    break;
+                case 1:
+                    window.location.href = "audio.html";
+                    break;
+                case 2:
+                    window.location.href = "feedback.html";
+                    break;
+            }
+        }
     </script>
 </body>
 
