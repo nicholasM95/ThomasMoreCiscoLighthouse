@@ -139,12 +139,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .img-vote {
   display: block;
   position: absolute;
   top: 10%;
+}
+
+.wip-bg {
+  background: url('../images/progress.png') no-repeat 0% 0%;
+  background-size: cover;
 }
 /*
   buzz-blauw: #5193C7
