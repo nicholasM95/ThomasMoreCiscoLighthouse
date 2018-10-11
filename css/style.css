@@ -95,6 +95,10 @@ body {
   color: #5193c7;
 }
 
+.title-padding {
+  padding-top: 4rem;
+}
+
 .feedback-text {
   font-size: 20px;
   background-color: #d8ecfb;
