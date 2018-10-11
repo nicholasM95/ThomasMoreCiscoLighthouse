@@ -73,8 +73,14 @@
             console.log(input.trim());
             var obj = JSON.parse(input.trim());
 
-            if (obj[0].orange == 1){
+            if (obj[0].blue == 1){
+                navigatie("explore.html");
+            } else if (obj[0].orange == 1){
+                navigatie("audio.html");
+            }else if (obj[0].green == 1){
                 navigatie("feedback.html");
+            }else if (obj[0].yellow == 1){
+                kiesRandom();
             }
 
         }
