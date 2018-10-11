@@ -102,9 +102,10 @@
         if (annyang) {
 
             annyang.addCallback('result', function(phrases) {
+                console.log(phrases);
                 feedback = feedback + phrases[0];
                 $('#feedback').text(feedback);
-                console.log(phrases);
+
             });
 
             // Start listening. You can call this here, or attach this call to an event, button, etc.
