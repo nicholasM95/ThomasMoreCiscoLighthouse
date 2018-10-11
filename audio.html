@@ -56,7 +56,11 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
+        var run = true;
         function readcontrollers(){
+            if (!run){
+                return;
+            }
             var input = getRemote("/cgi-bin/test.py");
             input = input.replace(/'/g, '"');
             input = input.replace(/True/g, 1);
@@ -87,6 +91,7 @@
         }
 
         function navigatie(url) {
+            run = false;
             window.location.href = url;
         }
 

@@ -52,6 +52,7 @@
 
 
     <script>
+        var run = true;
         function kiesRandom() {
             let randomNumber = Math.floor(Math.random() * 3);
             switch (randomNumber) {
@@ -68,6 +69,9 @@
         }
 
         function readcontrollers(){
+            if (!run){
+                return;
+            }
             var input = getRemote("/cgi-bin/test.py");
             input = input.replace(/'/g, '"');
             input = input.replace(/True/g, 1);
@@ -96,6 +100,7 @@
         }
 
         function navigatie(url) {
+            run = false;
             window.location.href = url;
         }
 
