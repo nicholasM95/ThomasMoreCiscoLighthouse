@@ -54,7 +54,11 @@
         </div>
     </div>
     <script>
+        var run = true;
         function readcontrollers(){
+            if (!run){
+                return;
+            }
             var input = getRemote("/cgi-bin/test.py");
             input = input.replace(/'/g, '"');
             input = input.replace(/True/g, 1);
@@ -87,10 +91,13 @@
         function navigatie(url) {
             window.location.href = url;
         }
-
         $(document).ready(function() {
-            setInterval(function(){ readcontrollers(); }, 100);
-        });
+            setTimeout(function () {
+                setInterval(function(){ readcontrollers(); }, 500);
+            })
+
+        }, 2000);
+
     </script>
 </body>
 
