@@ -54,6 +54,7 @@
 
     <script>
         var run = true;
+        var recording = false;
         function readcontrollers(){
             if (!run){
                 return;
@@ -68,9 +69,9 @@
             if (obj[0].red == 1){
                 navigatie("index.html");
             } else if (obj[0].blue == 1){
-                //start recordng
+                recording = true;
             }else if (obj[0].orange == 1){
-                //stop recording
+                recording = false;
             }else if (obj[0].yellow == 1){
                 //send
             }
@@ -90,12 +91,12 @@
             window.location.href = url;
         }
 
-        /*$(document).ready(function() {
+        $(document).ready(function() {
             setTimeout(function () {
                 setInterval(function(){ readcontrollers(); }, 500);
             })
 
-        }, 2000);*/
+        }, 2000);
 
         var feedback = "";
 
@@ -103,8 +104,11 @@
 
             annyang.addCallback('result', function(phrases) {
                 console.log(phrases);
-                feedback = feedback + phrases[0] + " ";
-                $('#feedback').text(feedback);
+                if (recording){
+                    feedback = feedback + phrases[0] + " ";
+                    $('#feedback').text(feedback);
+                }
+
 
             });
 
