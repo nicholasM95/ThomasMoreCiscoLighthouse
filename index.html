@@ -92,7 +92,10 @@
             window.location.href = url;
         }
 
-        setInterval(function(){ readcontrollers(); }, 100);
+        $(document).ready(function() {
+            setInterval(function(){ readcontrollers(); }, 100);
+        });
+
 
 
     </script>
