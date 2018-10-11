@@ -31,7 +31,7 @@
             <img src="./images/microfoon.jpg.off" alt="microphone" class="feedback-image">
         </div>
         <div class="col-4 margin-top-feedback feedback-text">
-            <p>The text you say will appear here...</p>
+            <p id="feedback">The text you say will appear here...</p>
         </div>
     </div>
     <div class="row">
@@ -50,6 +50,8 @@
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+
     <script>
         var run = true;
         function readcontrollers(){
@@ -94,6 +96,20 @@
             })
 
         }, 2000);
+
+        var feedback = "";
+
+        if (annyang) {
+
+            annyang.addCallback('result', function(phrases) {
+                feedback = feedback + phrases[0];
+                $('#feedback').text(feedback);
+                console.log(phrases);
+            });
+
+            // Start listening. You can call this here, or attach this call to an event, button, etc.
+            annyang.start();
+        }
 
     </script>
 
