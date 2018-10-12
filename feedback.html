@@ -91,6 +91,14 @@
             window.location.href = url;
         }
 
+        window.onkeyup = function(e) {
+            var key = e.keyCode ? e.keyCode : e.which;
+            if (key == 65){
+                annyang.stop();
+                setInterval(function(){ readcontrollers(); }, 500);
+            }
+        }
+
         /*$(document).ready(function() {
             setTimeout(function () {
                 setInterval(function(){ readcontrollers(); }, 500);
