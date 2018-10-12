@@ -20,7 +20,7 @@ body {
       rgba(255, 255, 255, 0.1) 100%
     ),
     url(../images/rsz_1vr-glasses.jpg);
-  background-position: 100% 60%;
+  background-position: 100% 20%;
   background-repeat: no-repeat;
   background-size: cover;
 }
