@@ -94,7 +94,6 @@
         window.onkeyup = function(e) {
             var key = e.keyCode ? e.keyCode : e.which;
             if (key == 65){
-                annyang.stop();
                 setInterval(function(){ readcontrollers(); }, 500);
             }else{
                 alert(key);
