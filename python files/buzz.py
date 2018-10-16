@@ -4,7 +4,7 @@ import usb.core
 import usb.util
 import traceback, sys, os
 import time
-import thread as thread
+import _thread as thread
 
 class Buzz:
     def __init__ (self):
@@ -57,7 +57,7 @@ class Buzz:
             data = self.device.read(self.endpoint.bEndpointAddress, self.endpoint.wMaxPacketSize, timeout=timeout)
             parsed = self.parseController(data)
         except usb.core.USBError as e:
-            if e[0] != 110:
+            if str(e)[7:10] != "110":
                 traceback.print_exc(file=sys.stdout)
             data = None
         if data != None and raw == False:

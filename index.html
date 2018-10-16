@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 
-
     <!--<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
@@ -20,101 +19,83 @@
 </head>
 
 <body class="bg-image">
-    <div>
-        <div class="language-switch">
-            <div class="input-group-prepend">
-                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">English</button>
-                <div class="dropdown-menu dropdown-menu-right">
-                    <a class="dropdown-item" href="#">Nederlands</a>
-                    <a class="dropdown-item" href="#">Français</a>
-                </div>
-            </div>
-        </div>
-        <div class="row buttons">
-            <div class="col-6"></div>
-            <div class="col-3 offset-1">
-                <a href="explore.html"><button type="button" class="btn btn-primary btn-blauw btn-lg btn-block">Explore</button></a>
-                <a href="audio.html"><button type="button" class="btn btn-primary btn-oranje btn-lg btn-block margin-top">Listen
-                        to audio</button></a>
-                <a href="feedback.html"><button type="button" class="btn btn-primary btn-groen btn-lg btn-block margin-top">Give
-                        feedback</button></a>
-                <button onclick="kiesRandom()" type="button" class="btn btn-primary btn-geel btn-lg btn-block margin-top">Surprise
-                    me!</button>
+<div>
+    <div class="language-switch">
+        <div class="input-group-prepend">
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">English
+            </button>
+            <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#">Nederlands</a>
+                <a class="dropdown-item" href="#">Français</a>
             </div>
         </div>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <div class="row buttons">
+        <div class="col-6"></div>
+        <div class="col-3 offset-1">
+            <a href="explore.html">
+                <button type="button" class="btn btn-primary btn-blauw btn-lg btn-block">Explore</button>
+            </a>
+            <a href="audio.html">
+                <button type="button" class="btn btn-primary btn-oranje btn-lg btn-block margin-top">Listen
+                    to audio
+                </button>
+            </a>
+            <a href="feedback.html">
+                <button type="button" class="btn btn-primary btn-groen btn-lg btn-block margin-top">Give
+                    feedback
+                </button>
+            </a>
+            <button onclick="kiesRandom()" type="button" class="btn btn-primary btn-geel btn-lg btn-block margin-top">
+                Surprise
+                me!
+            </button>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    <script>
-        $('.dropdown-toggle').dropdown()
-    </script>
+<script>
+    $('.dropdown-toggle').dropdown()
+</script>
 
 
-    <script>
-        var run = true;
-        function kiesRandom() {
-            run = false;
-            let randomNumber = Math.floor(Math.random() * 3);
-            switch (randomNumber) {
-                case 0:
-                    window.location.href = "explore.html";
-                    break;
-                case 1:
-                    window.location.href = "audio.html";
-                    break;
-                case 2:
-                    window.location.href = "feedback.html";
-                    break;
-            }
+<script>
+    function kiesRandom() {
+        run = false;
+        let randomNumber = Math.floor(Math.random() * 3);
+        switch (randomNumber) {
+            case 0:
+                navigate("explore.html");
+                break;
+            case 1:
+                navigate("audio.html");
+                break;
+            case 2:
+                navigate("feedback.html");
+                break;
         }
+    }
 
-        function readcontrollers(){
-            if (!run){
-                return;
-            }
-            var input = getRemote("/cgi-bin/test.py");
-            input = input.replace(/'/g, '"');
-            input = input.replace(/True/g, 1);
-            input = input.replace(/False/g, 2);
-            console.log(input.trim());
-            var obj = JSON.parse(input.trim());
+    function navigate(url) {
+        window.location.href = url;
+    }
 
-            if (obj[0].blue == 1){
-                navigatie("explore.html");
-            } else if (obj[0].orange == 1){
-                navigatie("audio.html");
-            }else if (obj[0].green == 1){
-                navigatie("feedback.html");
-            }else if (obj[0].yellow == 1){
-                kiesRandom();
-            }
-
+    window.onkeyup = function(e) {
+        var key = e.keyCode ? e.keyCode : e.which;
+        if (key == 66){
+            navigate("explore.html");
+        }else if (key == 67){
+            navigate("audio.html");
+        }else if (key == 68){
+            navigate("feedback.html");
+        }else if (key == 69){
+            kiesRandom();
         }
+    };
 
-        function getRemote(remote_url) {
-            return $.ajax({
-                type: "GET",
-                url: remote_url,
-                async: false
-            }).responseText;
-        }
-
-        function navigatie(url) {
-            run = false;
-            window.location.href = url;
-        }
-
-        $(document).ready(function() {
-            setTimeout(function () {
-                setInterval(function(){ readcontrollers(); }, 500);
-            })
-
-        }, 2000);
-
-
-
-    </script>
+</script>
 
 </body>
 

@@ -53,57 +53,16 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
 
     <script>
-        var run = true;
-        function readcontrollers(){
-            if (!run){
-                return;
-            }
-            var input = getRemote("/cgi-bin/test.py");
-            input = input.replace(/'/g, '"');
-            input = input.replace(/True/g, 1);
-            input = input.replace(/False/g, 2);
-            console.log(input.trim());
-            var obj = JSON.parse(input.trim());
-
-            if (obj[0].red == 1){
-                navigatie("index.html");
-            } else if (obj[0].blue == 1){
-                //todo of niet
-            }else if (obj[0].orange == 1){
-                //todo of niet
-
-            }else if (obj[0].yellow == 1){
-                //send
-            }
-
-        }
-
-        function getRemote(remote_url) {
-            return $.ajax({
-                type: "GET",
-                url: remote_url,
-                async: false
-            }).responseText;
-        }
-
-        function navigatie(url) {
-            run = false;
+        function navigate(url) {
             window.location.href = url;
         }
 
         window.onkeyup = function(e) {
             var key = e.keyCode ? e.keyCode : e.which;
             if (key == 65){
-                setInterval(function(){ readcontrollers(); }, 500);
+                navigate("index.html");
             }
-        }
-
-        /*$(document).ready(function() {
-            setTimeout(function () {
-                setInterval(function(){ readcontrollers(); }, 500);
-            })
-
-        }, 2000);*/
+        };
 
         var feedback = "";
 

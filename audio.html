@@ -69,63 +69,28 @@
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
-    var run = true;
-    var interval = 500;
-    var intervalObj;
 
-    function readcontrollers() {
-        if (!run) {
-            return;
-        }
-        var input = getRemote("/cgi-bin/test.py");
-        input = input.replace(/'/g, '"');
-        input = input.replace(/True/g, 1);
-        input = input.replace(/False/g, 2);
-        console.log(input.trim());
-        var obj = JSON.parse(input.trim());
 
-        if (obj[0].red == 1) {
-            navigatie("index.html");
-        } else if (obj[0].blue == 1) {
-            clearInterval(intervalObj);
-            $("#audio-player").trigger('play');
-        } else if (obj[0].orange == 1) {
-            clearInterval(intervalObj);
-            $("#audio-player").trigger('play');
-        } else if (obj[0].green == 1) {
-            clearInterval(intervalObj);
-            $("#audio-player").trigger('play');
-        } else if (obj[0].yellow == 1) {
-            clearInterval(intervalObj);
-            $("#audio-player").trigger('play');
-        }
-
-    }
-
-    $('#audio-player').on('ended', function() {
-        intervalObj = setInterval(function () {
-            readcontrollers();
-        }, interval);
-    });
-
-    function getRemote(remote_url) {
-        return $.ajax({
-            type: "GET",
-            url: remote_url,
-            async: false
-        }).responseText;
-    }
-
-    function navigatie(url) {
-        run = false;
+    function navigate(url) {
         window.location.href = url;
     }
 
-    $(document).ready(function () {
-        intervalObj = setInterval(function () {
-            readcontrollers();
-        }, interval);
-    });
+    window.onkeyup = function(e) {
+        var key = e.keyCode ? e.keyCode : e.which;
+        if (key == 65){
+            navigate("index.html");
+        }else if (key == 66){
+            $("#audio-player").trigger('play');
+        }else if (key == 67){
+            $("#audio-player").trigger('play');
+        }else if (key == 68){
+            $("#audio-player").trigger('play');
+        }else if (key == 69){
+            $("#audio-player").trigger('play');
+        }
+    };
+
+
 
 
 </script>
